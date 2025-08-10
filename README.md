@@ -60,8 +60,8 @@ Copy the `pre-commit` hook from the `.git/hooks` folder in `ui` to the `.git/hoo
 ## 2. Backend section:
 
 Before starting the application:
-
-- get `db.properties` file from one of devs and put it into your backend folder
+//TODO Karo check how to configure it properly
+ - get `db.properties` file from one of devs and put it into your project root
 
 Run the following commands in Maven Tool:
 
