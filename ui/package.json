@@ -15,7 +15,9 @@
     "lint": "npm run check && npm run lint:format && npm run lint:fix ",
     "x-prepare": "npx simple-git-hooks",
     "generate-api": "openapi-typescript ../openapi/cat-playground-api.yml -o ./src/api/generated/cat-playground-api.ts",
-    "prelint": "npm run generate-api"
+    "prelint": "npm run generate-api",
+    "prebuild": "npm run generate-api",
+    "predev": "npm run generate-api"
   },
   "author": "",
   "license": "ISC",

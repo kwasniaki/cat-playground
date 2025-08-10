@@ -61,7 +61,7 @@ Copy the `pre-commit` hook from the `.git/hooks` folder in `ui` to the `.git/hoo
 
 Before starting the application:
 
-- get `db.properties` file from one of devs and put it into your project root
+- get `db.properties` file from one of devs and put it into your backend folder
 
 Run the following commands in Maven Tool:
 
