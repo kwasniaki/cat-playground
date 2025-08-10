@@ -4,6 +4,8 @@ import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import prettierConfig from 'eslint-config-prettier';
 import { defineConfig } from 'eslint/config';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 // eslint-disable-next-line import/no-default-export
 export default defineConfig([
@@ -14,10 +16,21 @@ export default defineConfig([
   importPlugin.flatConfigs.recommended,
   tseslint.configs.recommended,
   prettierConfig,
+  reactPlugin.configs.flat.recommended,
+  reactHooksPlugin.configs['recommended-latest'],
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     languageOptions: { globals: globals.browser },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'error',
+      'react-hooks/exhaustive-deps': 'error',
+      'react-hooks/rules-of-hooks': 'error',
       'no-console': 'error',
       'import/order': 'warn',
       'import/no-default-export': 'warn',
