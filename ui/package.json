@@ -11,9 +11,13 @@
     "preview": "vite preview",
     "check": "tsc --noEmit",
     "lint:fix": "eslint . --fix",
-    "lint:format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
-    "lint": "npm run lint:format && npm run lint:fix ",
-    "x-prepare": "npx simple-git-hooks"
+    "lint:format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "lint": "npm run check && npm run lint:format && npm run lint:fix ",
+    "x-prepare": "npx simple-git-hooks",
+    "generate-api": "openapi-typescript ../openapi/cat-playground-api.yml -o ./src/api/generated/cat-playground-api.ts",
+    "prelint": "npm run generate-api",
+    "prebuild": "npm run generate-api",
+    "predev": "npm run generate-api"
   },
   "author": "",
   "license": "ISC",
@@ -48,6 +52,8 @@
   },
   "packageManager": "npm@11.5.2+sha512.aac1241cfc3f41dc38780d64295c6c6b917a41e24288b33519a7b11adfc5a54a5f881c642d7557215b6c70e01e55655ed7ba666300fd0238bc75fb17478afaf3",
   "dependencies": {
+    "openapi-fetch": "^0.14.0",
+    "openapi-typescript": "^7.8.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   }
