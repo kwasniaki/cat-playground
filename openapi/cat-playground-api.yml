@@ -24,6 +24,24 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Echo"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "501":
+          description: Not Implemented
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   schemas:
     Echo:
@@ -35,3 +53,16 @@ components:
           type: string
           description: The message to echo back
           example: "Hello World!"
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: The error message
+          example: "Unknown error"
+        code:
+          type: integer
+          description: The error code
+          example: 500
