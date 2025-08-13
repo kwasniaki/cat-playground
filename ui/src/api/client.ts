@@ -1,6 +1,9 @@
 import createClient from 'openapi-fetch';
+import { QueryClient } from '@tanstack/react-query';
 import type { paths } from './generated/cat-playground-api';
 
 export const apiClient = createClient<paths>({
-  baseUrl: 'http://localhost:8080',
+  baseUrl: '/api',
 });
+
+export const apiQueryClient = new QueryClient();
