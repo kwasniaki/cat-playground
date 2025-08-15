@@ -36,12 +36,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-        "501":
-          description: Not Implemented
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
 components:
   schemas:
     Echo:
@@ -58,11 +52,11 @@ components:
       required:
         - message
       properties:
-        message:
+        title:
           type: string
           description: The error message
           example: "Unknown error"
-        code:
-          type: integer
-          description: The error code
-          example: 500
+        details:
+          type: string
+          description: The error details
+          example: "Something bad happened"

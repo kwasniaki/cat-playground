@@ -13,7 +13,8 @@ export const Root = () => {
       {error && (
         <div>
           <h2>Error</h2>
-          {error.message}
+          <p>{error.title}</p>
+          <p>{error.details}</p>
           <pre>{JSON.stringify(error, null, 2)}</pre>
         </div>
       )}
