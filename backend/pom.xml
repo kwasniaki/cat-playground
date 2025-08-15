@@ -23,6 +23,9 @@
         <jackson-databind-nullable.version>0.2.6</jackson-databind-nullable.version>
         <openapi.generator.plugin.version>7.14.0</openapi.generator.plugin.version>
 
+        <junit-jupiter.version>6.0.0-M2</junit-jupiter.version>
+        <spring-boot-starter-test.version>4.0.0-M1</spring-boot-starter-test.version>
+
         <!-- added because of vulnerability found under openapi-generator-maven-plugin v7.14.0, to be removed when no longer needed-->
         <commons-lang3.version>3.18.0</commons-lang3.version>
 
@@ -59,6 +62,25 @@
             <groupId>org.openapitools</groupId>
             <artifactId>openapi-generator-maven-plugin</artifactId>
             <version>${openapi.generator.plugin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-test.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
