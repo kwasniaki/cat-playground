@@ -1,7 +1,7 @@
 openapi: "3.1.1"
 info:
   title: cat-playground
-  version: "0.1.0"
+  version: "0.1.1"
 paths:
   /echo:
     get:
@@ -24,6 +24,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Echo"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   schemas:
     Echo:
@@ -35,3 +47,16 @@ components:
           type: string
           description: The message to echo back
           example: "Hello World!"
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        title:
+          type: string
+          description: The error message
+          example: "Unknown error"
+        details:
+          type: string
+          description: The error details
+          example: "Something bad happened"
