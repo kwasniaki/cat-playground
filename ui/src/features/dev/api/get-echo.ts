@@ -1,8 +1,7 @@
 import { queryOptions, useQuery } from '@tanstack/react-query';
-import { OperationInputs } from '../../utils/extract-operation-parameters';
-import { apiClient } from '../client';
-import { QueryConfig } from '../../utils/query-config';
-import { unwrapFetchResponse } from '../../utils/unwrap-fetch-response';
+import { apiClient } from '../../../api';
+import { OperationInputs, QueryConfig } from '../../../types';
+import { unwrapFetchResponse } from '../../../utils/unwrap-fetch-response';
 
 export const getEcho = (params: OperationInputs<'echo'>, signal?: AbortSignal) => {
   return apiClient.GET('/echo', {

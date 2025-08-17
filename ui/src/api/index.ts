@@ -1,1 +1,1 @@
-export * from './dev/get-echo';
+export * from './client';
