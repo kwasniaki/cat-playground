@@ -1,3 +1,4 @@
+import path from 'node:path';
 import type { UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -12,6 +13,11 @@ export default {
       },
     },
     port: 3000,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   plugins: [react()],
 } satisfies UserConfig;

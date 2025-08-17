@@ -1,1 +1,2 @@
-export * from './dev/get-echo';
+export * from './client';
+export * from './generated/cat-playground-api';
