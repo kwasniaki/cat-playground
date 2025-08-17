@@ -6,7 +6,7 @@ paths:
   /echo:
     get:
       tags:
-        - dev
+        - Dev
       operationId: echo
       summary: Echo the message
       description: Basic echo endpoint for testing

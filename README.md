@@ -5,11 +5,17 @@
 ### DEVELOP
 
 #### Prerequisites
-
-- node - `package.json@engines`
+You need to have installed following tools:
+- node - required version under [package.json@engines](ui/package.json)
 - corepack
 
-> Great tool for installing node is `n` node manager
+Check if node is installed:
+
+```bash
+    node --version
+```
+
+> If not, great tool for installing node is `n` node manager
 >
 > you can install it from https://github.com/tj/n
 >
