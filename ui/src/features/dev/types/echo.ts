@@ -1,3 +1,3 @@
-import { components } from '../../../api/generated/cat-playground-api';
+import { components } from '@/api';
 
 export type Echo = components['schemas']['Echo'];

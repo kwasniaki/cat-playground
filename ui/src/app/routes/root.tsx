@@ -1,4 +1,4 @@
-import { Echo } from '../../features/dev/components/Echo';
+import { Echo } from '@/features/dev';
 
 export const Root = () => {
   return (
